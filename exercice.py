@@ -3,7 +3,35 @@
 
 
 def check_brackets(text, brackets):
-	return False
+	#pile vide
+	bracket_stack = []
+	#pour chaque caractere
+	for c in text:
+		# si ch est ouvrant #
+		if c == "(":
+			# empiler le char
+			bracket_stack.append(c)
+		#sinon si char est ferment
+		elif c ==")":
+			# si pile est vide
+			if len(bracket_stack) == 0:
+				#erreur
+				return False
+			# Si le char et le ferment du dessus de la pile
+				# Depile
+			bracket_stack.pop()
+			#sinon
+				#erreur return false
+	# si pile est vide 
+	if len(bracket_stack) == 0:
+		#ok
+		return True
+	#sinon
+	else:
+		#erreur
+		return False
+	
+		
 
 def remove_comments(full_text, comment_start, comment_end):
 	return ""
